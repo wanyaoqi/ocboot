@@ -79,42 +79,50 @@
   when:
   - hugetlb_is_ready == false
 
-- name: SSH Reboot system if not cloud kernel, it should take a few minutes...
-  reboot:
-    reboot_timeout:  900 # 15 mins
-    connect_timeout: 900 # 15 mins
-    msg: "rebooting host to enable cloud kernel ... please wait... "
-    test_command: "uname -r | grep -qE '{{ kernel_regex }}'   "
-  become: yes
+- name: Kernel check
+  debug:
+    msg: "Please reboot target system make kernel changes work!!!"
   when:
     - is_centos_x86 | default(false) | bool  == true
-    - is_yunion_kernel_running.rc != 0
     - is_controller_node is not defined or is_controller_node|default(false)|bool == false
-    - ansible_connection == "ssh"
 
-- name: Local Reboot system if not cloud kernel, it should take a few minutes...
-  command: reboot
-  become: yes
-  when:
-    - is_centos_x86 | default(false) | bool  == true
-    - is_yunion_kernel_running.rc != 0
-    - is_controller_node is not defined or is_controller_node|default(false)|bool == false
-    - ansible_connection == "local"
 
-- name: SSH Reboot system if hugetlb conf is updated
-  reboot:
-    reboot_timeout:  900 # 15 mins
-    connect_timeout: 900 # 15 mins
-  become: yes
-  when:
-  - hugetlb_is_ready == false
-  - is_controller_node is not defined or is_controller_node|default(false)|bool == false
-  - ansible_connection == "ssh"
+# - name: SSH Reboot system if not cloud kernel, it should take a few minutes...
+#   reboot:
+#     reboot_timeout:  900 # 15 mins
+#     connect_timeout: 900 # 15 mins
+#     msg: "rebooting host to enable cloud kernel ... please wait... "
+#     test_command: "uname -r | grep -qE '{{ kernel_regex }}'   "
+#   become: yes
+#   when:
+#     - is_centos_x86 | default(false) | bool  == true
+#     - is_yunion_kernel_running.rc != 0
+#     - is_controller_node is not defined or is_controller_node|default(false)|bool == false
+#     - ansible_connection == "ssh"
 
-- name: Local Reboot system if hugetlb conf is updated
-  command: reboot
-  become: yes
-  when:
-  - hugetlb_is_ready == false
-  - is_controller_node is not defined or is_controller_node|default(false)|bool == false
-  - ansible_connection == "local"
+# - name: Local Reboot system if not cloud kernel, it should take a few minutes...
+#   command: reboot
+#   become: yes
+#   when:
+#     - is_centos_x86 | default(false) | bool  == true
+#     - is_yunion_kernel_running.rc != 0
+#     - is_controller_node is not defined or is_controller_node|default(false)|bool == false
+#     - ansible_connection == "local"
+
+# - name: SSH Reboot system if hugetlb conf is updated
+#   reboot:
+#     reboot_timeout:  900 # 15 mins
+#     connect_timeout: 900 # 15 mins
+#   become: yes
+#   when:
+#   - hugetlb_is_ready == false
+#   - is_controller_node is not defined or is_controller_node|default(false)|bool == false
+#   - ansible_connection == "ssh"
+
+# - name: Local Reboot system if hugetlb conf is updated
+#   command: reboot
+#   become: yes
+#   when:
+#   - hugetlb_is_ready == false
+#   - is_controller_node is not defined or is_controller_node|default(false)|bool == false
+#   - ansible_connection == "local"

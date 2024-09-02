@@ -130,6 +130,11 @@ class OcbootConfig(object):
             return True
         return False
 
+    def node_as_host_config(self):
+        if self.worker_config is None:
+            return False
+        return self.worker_config.as_host is True
+
     def _fetch_conf(self, config_cls):
         group = config_cls.get_group()
         group_config = self.config.get(group, None)
