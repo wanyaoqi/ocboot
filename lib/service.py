@@ -202,6 +202,9 @@ class AddNodesConfig(object):
             vars=self.get_vars(),
         )
 
+        if self.worker_config.as_host is True:
+            print("Please reboot target host to enable kernel changes !!!")
+
     def get_vars(self):
         return get_ansible_global_vars(self.current_version)
 

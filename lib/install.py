@@ -105,6 +105,9 @@ def start(config_file):
     if return_code is not None and return_code != 0:
         return return_code
 
+    if config.node_as_host_config():
+        print("Please reboot target host to enable kernel changes !!!")
+
     login_info = config.get_login_info()
     if login_info is None:
         return 0
@@ -115,6 +118,6 @@ def start(config_file):
                                   login_info[1],
                                   login_info[2]))
 
-    try_reboot_primary(ip)
+    # try_reboot_primary(ip)
 
     return 0
