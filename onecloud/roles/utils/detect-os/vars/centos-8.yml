@@ -11,7 +11,7 @@ common_packages:
     - boost-thread
     - bridge-utils
     - celt051
-    - ceph-common
+    # - ceph-common
     - chrony
     - conntrack-tools
     - curl
@@ -33,8 +33,8 @@ common_packages:
     - libogg
     - libpath_utils
     - libpcap
-    - librados2
-    - librbd1
+    # - librados2
+    # - librbd1
     - libref_array
     - libselinux-python3
     - libtirpc

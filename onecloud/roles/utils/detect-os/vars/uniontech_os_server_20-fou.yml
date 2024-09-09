@@ -5,7 +5,7 @@ common_packages:
   - bash-completion
   - bridge-utils
   - ca-certificates
-  - ceph-common
+  # - ceph-common
   - chntpw
   - conntrack
   - conntrackd
@@ -24,7 +24,7 @@ common_packages:
   - kubeadm=1.15.12-00 # 3 # 此处不要排序, 以免自动安装更高版本
   - libcapstone3
   - libiscsi7
-  - librbd1
+  # - librbd1
   - libspice-server1
   - libusb-1.0-0
   - libusbredirparser1

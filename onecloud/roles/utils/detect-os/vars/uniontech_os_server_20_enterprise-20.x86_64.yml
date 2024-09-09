@@ -6,7 +6,7 @@ common_packages:
   - bash-completion
   - bridge-utils
   - ca-certificates
-  - ceph-common
+  # - ceph-common
   - chntpw
   - conntrack
   - conntrackd
@@ -23,7 +23,7 @@ common_packages:
   - kubeadm=1.15.12-00
   - kubectl=1.15.12-00
   - kubelet=1.15.12-00
-  - librbd1
+  # - librbd1
   - libspice-server1
   - libusb-1.0-0
   - libusbredirparser1
