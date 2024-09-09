@@ -5,7 +5,7 @@ common_packages:
   - apt-transport-https
   - bash-completion
   - bridge-utils
-  - ceph-common
+  # - ceph-common
   - chntpw
   - conntrack
   - conntrackd
@@ -22,8 +22,8 @@ common_packages:
   - kubeadm=1.15.12-00
   - kubectl=1.15.12-00
   - kubelet=1.15.12-00
-  - librbd1
-  - libspice-server1
+  # - librbd1
+  # - libspice-server1
   - libusb-1.0-0
   - libusbredirparser1
   - nfs-common

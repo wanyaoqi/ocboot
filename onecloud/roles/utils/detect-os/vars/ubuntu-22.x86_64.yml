@@ -6,7 +6,7 @@ common_packages:
   - apt-transport-https
   - bash-completion
   - bridge-utils
-  - ceph-common
+  # - ceph-common
   - chntpw
   - conntrack
   - conntrackd
@@ -22,8 +22,8 @@ common_packages:
   - jq
   - libusb-1.0-0
   - libusbredirparser1
-  - librbd1
-  - libspice-server1
+  # - librbd1
+  # - libspice-server1
   - libiscsi7
   - libcapstone4
   - nfs-common

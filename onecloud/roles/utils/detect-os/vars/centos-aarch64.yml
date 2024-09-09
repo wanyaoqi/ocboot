@@ -12,7 +12,7 @@ common_packages:
   - boost-thread
   - bridge-utils
   - celt051
-  - ceph-common
+  # - ceph-common
   - conntrack-tools
   - curl
   - fuse
@@ -35,8 +35,8 @@ common_packages:
   - libogg
   - libpath_utils
   - libpcap
-  - librados2
-  - librbd1
+  # - librados2
+  # - librbd1
   - libref_array
   - libselinux-python3
   - libtirpc
@@ -60,8 +60,8 @@ common_packages:
   - quota-nls
   - rpcbind
   - rsync
-  - spice
-  - spice-protocol
+  # - spice
+  # - spice-protocol
   - sysstat
   - tcp_wrappers
   - tcpdump
